@@ -74,7 +74,7 @@ module Jekyll
         # Returns nothing.
         def watch(site, options)
           # Warn Windows users that they might need to upgrade.
-          if Utils::Platforms.bash_on_windows?
+          unless Utils::Platforms.bash_on_windows?
             Jekyll.logger.warn "",
               "Auto-regeneration may not work on some Windows versions."
             Jekyll.logger.warn "",
